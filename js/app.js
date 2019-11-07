@@ -1,5 +1,6 @@
   var Calculadora ={
 
+
     //funciones para ampliar y reducir botones
 
    reduceimagenon:function(){
@@ -157,13 +158,149 @@
 
 
 
+//funciones para mostrar numeros en pantalla
 
-
-
-
+ingresatecla7: function() {
+  var display = document.getElementById('display');
+  if (display.textContent == '0'){
+    display.textContent = "";
+    display.textContent = display.textContent + '7';
+  }
+   else {
+     display.textContent = display.textContent + '7';
    }
+},
 
-//invocaciones de funcioenes para ampliar y reducir imagen
+ingresatecla8:function(){
+  var display = document.getElementById('display');
+  if (display.textContent == '0'){
+    display.textContent = "";
+    display.textContent = display.textContent + '8';
+  }
+   else {
+     display.textContent = display.textContent + '8';
+   }
+  },
+
+  ingresatecla9:function(){
+    var display = document.getElementById('display');
+    if (display.textContent == '0'){
+      display.textContent = "";
+      display.textContent = display.textContent + '9';
+    }
+     else {
+       display.textContent = display.textContent + '9';
+     }
+    },
+
+    ingresatecla4:function(){
+      var display = document.getElementById('display');
+      if (display.textContent == '0'){
+        display.textContent = "";
+        display.textContent = display.textContent + '4';
+      }
+       else {
+         display.textContent = display.textContent + '4';
+       }
+      },
+
+      ingresatecla5:function(){
+        var display = document.getElementById('display');
+        if (display.textContent == '0'){
+          display.textContent = "";
+          display.textContent = display.textContent + '5';
+        }
+         else {
+           display.textContent = display.textContent + '5';
+         }
+        },
+
+        ingresatecla6:function(){
+          var display = document.getElementById('display');
+          if (display.textContent == '0'){
+            display.textContent = "";
+            display.textContent = display.textContent + '6';
+          }
+           else {
+             display.textContent = display.textContent + '6';
+           }
+          },
+
+          ingresatecla1:function(){
+            var display = document.getElementById('display');
+            if (display.textContent == '0'){
+              display.textContent = "";
+              display.textContent = display.textContent + '1';
+            }
+             else {
+               display.textContent = display.textContent + '1';
+             }
+            },
+
+            ingresatecla2:function(){
+              var display = document.getElementById('display');
+              if (display.textContent == '0'){
+                display.textContent = "";
+                display.textContent = display.textContent + '2';
+              }
+               else {
+                 display.textContent = display.textContent + '2';
+               }
+              },
+
+              ingresatecla3:function(){
+                var display = document.getElementById('display');
+                if (display.textContent == '0'){
+                  display.textContent = "";
+                  display.textContent = display.textContent + "3";
+                }
+                 else {
+                   display.textContent = display.textContent + '3'
+                 }
+                },
+
+                ingresatecla0:function(){
+                  var display = document.getElementById('display');
+                  if (display.textContent == '0'){
+                    display.textContent = "0";
+                  }
+                   else {
+                     display.textContent = display.textContent + '0';
+                   }
+                 },
+
+
+//funcion para tecla punto
+
+  ingresateclapunto:function(){
+    var display = document.getElementById('display');
+    if (display.textContent.indexOf(".") == -1) { //-1 inica que no esta
+      display.textContent += ".";
+    }
+  },
+
+//funcion para la tecla on: reiniciar pantalla
+
+ingresateclaon:function(){
+  document.getElementById('display').innerHTML=0
+},
+
+
+//funcion para la tecla +/-
+
+ingresateclasign:function(){
+  var display = document.getElementById('display');
+  if (display.textContent.indexOf("-") == -1) {
+    display.textContent = -display.textContent;
+ }
+ else {
+   display.textContent = -display.textContent;
+ }
+},
+
+} //cierre objeto Calculadora
+
+//invocaciones de funciones para ampliar y reducir imagen
 
   document.getElementById('on').addEventListener("mousedown", function() {Calculadora.reduceimagenon();});
   document.getElementById('on').addEventListener("mouseup", function() {Calculadora.ampliaimagenon();});
@@ -203,3 +340,28 @@
   document.getElementById('igual').addEventListener("mouseup", function() {Calculadora.ampliaimagenigual();});
   document.getElementById('mas').addEventListener("mousedown", function() {Calculadora.reduceimagenmas();});
   document.getElementById('mas').addEventListener("mouseup", function() {Calculadora.ampliaimagenmas();});
+
+//invocacion de funciones para teclas de numeros
+
+document.getElementById('7').addEventListener("click", function() {Calculadora.ingresatecla7();});
+document.getElementById('8').addEventListener("click", function() {Calculadora.ingresatecla8();});
+document.getElementById('9').addEventListener("click", function() {Calculadora.ingresatecla9();});
+document.getElementById('4').addEventListener("click", function() {Calculadora.ingresatecla4();});
+document.getElementById('5').addEventListener("click", function() {Calculadora.ingresatecla5();});
+document.getElementById('6').addEventListener("click", function() {Calculadora.ingresatecla6();});
+document.getElementById('1').addEventListener("click", function() {Calculadora.ingresatecla1();});
+document.getElementById('2').addEventListener("click", function() {Calculadora.ingresatecla2();});
+document.getElementById('3').addEventListener("click", function() {Calculadora.ingresatecla3();});
+document.getElementById('0').addEventListener("click", function() {Calculadora.ingresatecla0();});
+
+// invocacion de funcion para tecla punto
+
+document.getElementById('punto').addEventListener("click", function() {Calculadora.ingresateclapunto();});
+
+//invocacion de funcion para tecla on
+
+document.getElementById('on').addEventListener("click", function() {Calculadora.ingresateclaon();});
+
+//invocacion de funcion para tecla +/-
+
+document.getElementById('sign').addEventListener("click", function() {Calculadora.ingresateclasign();});
