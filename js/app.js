@@ -1,5 +1,8 @@
   var Calculadora ={
 
+   op: "",
+   n1: "",
+   n2: "",
 
     //funciones para ampliar y reducir botones
 
@@ -255,7 +258,7 @@ ingresatecla8:function(){
                   display.textContent = display.textContent + "3";
                 }
                  else {
-                   display.textContent = display.textContent + '3'
+                   display.textContent = display.textContent + '3';
                  }
                 },
 
@@ -296,6 +299,62 @@ ingresateclasign:function(){
  else {
    display.textContent = -display.textContent;
  }
+},
+
+
+//funcion tecla suma
+ingresateclasuma:function(){
+  var display = document.getElementById('display');
+  n1 = Number(display.textContent);
+  op = "suma";
+  display.textContent = "";
+},
+
+//funcion tecla resta
+ingresateclaresta:function(){
+  var display = document.getElementById('display');
+  n1 = Number(display.textContent);
+  op = "resta";
+  display.textContent = "";
+},
+
+//funcion tecla multiplicar
+ingresateclapor:function(){
+  var display = document.getElementById('display');
+  n1 = Number(display.textContent);
+  op = "multiplicacion";
+  display.textContent = "";
+},
+
+//funcion tecla division
+ingresatecladividido:function(){
+  var display = document.getElementById('display');
+  n1 = Number(display.textContent);
+  op = "division";
+  display.textContent = "";
+},
+
+
+//funcion tecla igual
+ingresateclaigual:function(){
+  var display = document.getElementById('display');
+  n2 = Number(display.textContent);
+  switch (op) {
+    case "suma":
+      display.textContent = n1 + n2
+      break;
+    case "resta":
+      display.textContent = n1 - n2
+      break;
+    case "multiplicacion":
+      display.textContent = n1 * n2
+      break;
+    case "division":
+      display.textContent = n1 / n2
+      break;
+    default:
+     break;
+  }
 },
 
 } //cierre objeto Calculadora
@@ -365,3 +424,14 @@ document.getElementById('on').addEventListener("click", function() {Calculadora.
 //invocacion de funcion para tecla +/-
 
 document.getElementById('sign').addEventListener("click", function() {Calculadora.ingresateclasign();});
+
+//invocacion tecla operaciones
+
+document.getElementById('mas').addEventListener("click", function() {Calculadora.ingresateclasuma();});
+document.getElementById('menos').addEventListener("click", function() {Calculadora.ingresateclaresta();});
+document.getElementById('por').addEventListener("click", function() {Calculadora.ingresateclapor();});
+document.getElementById('dividido').addEventListener("click", function() {Calculadora.ingresatecladividido();});
+
+//invocacion tecla igual
+
+document.getElementById('igual').addEventListener("click", function() {Calculadora.ingresateclaigual();});
